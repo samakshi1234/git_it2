@@ -10,7 +10,7 @@
    <body>
       <div id="app">
               <h2>TODO APP</h2>
-              <form id="desc" action="/createtodo"> 
+              <form action="/createtodo" method="POST" id="desc"> 
                 <div class="container">
                   <label for="memo" >Description</label>
                   <input type="text" id="memo" name="worktodo" placeholder="What do you need to do?" required>
@@ -31,12 +31,11 @@
                      <input type="date" name="date" id="date"  required>
                     </div>
                 </div>
-              </form>  
              <div id="btns">
-                 <button id="addbtn"><span style="margin-right: 10px;"><i class="fas fa-plus"></i></span>ADD TASK</button>
-                 <button id="delbtn"><span style="margin-right: 10px;"><i class="far fa-trash-alt"></i></span>DELETE TASK</button>
+                 <button id="addbtn" type="submit"><span style="margin-right: 10px;"><i class="fas fa-plus"></i></span>ADD TASK</button>
+                 <button id="delbtn" type="submit"><span style="margin-right: 10px;"><i class="far fa-trash-alt"></i></span>DELETE TASK</button>
              </div>
-             
+            </form> 
             
        
              <div id="work">
