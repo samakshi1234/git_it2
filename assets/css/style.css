@@ -1,0 +1,86 @@
+body{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin:0px;
+    background-color:peachpuff;
+}
+
+#app{
+   background-color:white;
+   height:600px;
+   width:600px;
+   display: flex;
+   flex-direction:column;
+}
+h2{
+    text-align:center;
+}
+.container {
+    display:flex;
+    flex-direction: column;
+    border-top: 1px solid lightgray;  
+    height:50px;
+    padding:5px; 
+}
+
+#desc #memo{
+    border:none;
+    outline: none;
+    padding-top: 10px;
+    color:black;
+}
+
+#cont1{
+    display:flex;
+    flex-direction:row;
+    height:90px;
+    
+}
+#wform , #dform{
+    display:flex;
+    flex-direction:column;
+    /* height:50px; */
+    width:48%;
+    padding:5px;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+#wform{
+    border-right:1px solid lightgray;
+}
+#category ,#date{
+    padding-top: 5px;
+    outline: none;
+    border:none;
+}
+
+#btns{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    height:100px;
+}
+
+#addbtn{
+    background-color: darkslategrey;
+    height:50px;
+    color:white;
+    border: none;
+    border-radius:1px;
+}
+#delbtn{
+    background-color: red;
+    height:50px;  
+    color:white;
+    border: none;
+    border-radius:1px;
+}
+  
+#work{
+     display: flex;
+     flex-direction:row;
+}
+
+
+

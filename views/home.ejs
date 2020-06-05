@@ -1,0 +1,55 @@
+<html>
+   <head>
+       <title>
+         My Todo App
+       </title>
+       <link rel="stylesheet" href="/css/style.css">
+       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+       <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
+   </head>
+   <body>
+      <div id="app">
+              <h2>TODO APP</h2>
+              <form id="desc" action="/createtodo"> 
+                <div class="container">
+                  <label for="memo" >Description</label>
+                  <input type="text" id="memo" name="worktodo" placeholder="What do you need to do?" required>
+                </div>
+                <div id="cont1" >
+                    <div id="wform">
+                        <label for="cars">Choose a car:</label>
+                        <select name="category" id="category">
+                          <option value="Work">Work</option>
+                          <option value="Personal">Personal</option>
+                          <option value="School">School</option>
+                          <option value="Cleaning">Cleaning</option>
+                          <option value="others">Others</option>
+                        </select>
+                    </div>
+                    <div id="dform">   
+                     <label for="date">Choose A Date</label>
+                     <input type="date" name="date" id="date"  required>
+                    </div>
+                </div>
+              </form>  
+             <div id="btns">
+                 <button id="addbtn"><span style="margin-right: 10px;"><i class="fas fa-plus"></i></span>ADD TASK</button>
+                 <button id="delbtn"><span style="margin-right: 10px;"><i class="far fa-trash-alt"></i></span>DELETE TASK</button>
+             </div>
+             
+            
+       
+             <div id="work">
+                <form action="/deletetodo" method="POST">
+               <input type="checkbox" name="checkbox" id="selected">
+                </form>
+                   <div id="info">
+                   </div>
+                <div id="todo_type">
+                </div>   
+             </div>
+    </div> 
+
+ 
+   </body>
+</html>
