@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-
+// schema to be added
 const todoSchema= new mongoose.Schema({
    
     worktodo:{

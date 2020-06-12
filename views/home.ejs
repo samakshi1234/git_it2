@@ -5,19 +5,27 @@
        </title>
        <link rel="stylesheet" href="/css/style.css">
        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-       <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> -->
-   </head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+       <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      </head>
    <body>
       <div id="app">
+         <div id="heading">
               <h2>TODO APP</h2>
-              <form action="/createtodo" method="POST" id="desc"> 
+          </div>    
+              <form action="/createtodo" method="POST" id="desc">
+               <!-- add desc part  -->
                 <div class="container">
                   <label for="memo" >Description</label>
                   <input type="text" id="memo" name="worktodo" placeholder="What do you need to do?" required>
                 </div>
                 <div id="cont1" >
+                   <!-- select type pf description -->
                     <div id="wform">
-                        <label for="cars">Choose a car:</label>
+                        <label for="cars">Choose a category:</label>
                         <select name="category" id="category">
                           <option value="Work">Work</option>
                           <option value="Personal">Personal</option>
@@ -26,29 +34,42 @@
                           <option value="others">Others</option>
                         </select>
                     </div>
-                    <div id="dform">   
-                     <label for="date">Choose A Date</label>
+                    <div id="dform">  
+                       <!-- add a date  -->
+                     <label for="date">Choose a date</label>
                      <input type="date" name="date" id="date"  required>
                     </div>
                 </div>
-             <div id="btns">
-                 <button id="addbtn" type="submit"><span style="margin-right: 10px;"><i class="fas fa-plus"></i></span>ADD TASK</button>
+             <div id="btns">   
+                <button id="addbtn" type="submit"><span style="margin-right: 10px;"><i class="fas fa-plus"></i></span>ADD TASK</button>   
+              </div>
+               </form>
+
+  <!-- form to delete a todo -->
+      <form action="/deletetodo" id="del">  
+         <div id="btns">
+                <form action="/deletetodo">
                  <button id="delbtn" type="submit"><span style="margin-right: 10px;"><i class="far fa-trash-alt"></i></span>DELETE TASK</button>
-             </div>
-            </form> 
-            
-       
-             <div id="work">
-                <form action="/deletetodo" method="POST">
-               <input type="checkbox" name="checkbox" id="selected">
-                </form>
+               
+         </div>                     
+     <!-- the todo part                    -->
+         <div id="mytodolist">
+             <% for(let i of todo_list) { %>
+              <div id="work">
+               <input type="checkbox" name="<%= i._id %>" >
                    <div id="info">
+                       <%= i.worktodo %>
+                      <span style="padding-top: 4px;"><i class="far fa-calendar-alt" style="padding-right: 4px;"></i> <%=i.date.getFullYear()+'-'+((i.date.getMonth()+1).toString())+'-'+i.date.getDate() %></span>
                    </div>
                 <div id="todo_type">
+                    <%= i.category %>
                 </div>   
              </div>
+          <% } %>   
+          </div> 
+         </form>
     </div> 
-
- 
+   
    </body>
+   <script  src="/js/script.js"></script>
 </html>
